@@ -1,0 +1,51 @@
+---
+title: "leaflet"
+author: "Rishab"
+date: "05/01/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## PROJECT INSTRUCTION
+Create a web page using R Markdown feature leaflet which will be used to create
+maps
+## OVERVIEW
+We will plot the capital of all the states of India
+```{r}
+library(leaflet)
+library(dplyr)
+library(stringi)
+set.seed(3343)
+```
+## Plotting the location 
+Retrieved the data from the internet 
+```{r}
+capital <-  leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lat=19.0760, lng=72.8777, popup="Mumbai") %>%
+  addMarkers(lat=22.5726,lng=88.3639, popup="Kolkata") %>%
+  addMarkers(lat=17.3850,lng=78.4867, popup="Hyderbad") %>%
+  addMarkers(lat=12.9716, lng=77.5946, popup="Bengaluru") %>%
+  addMarkers(lat=13.0827,lng=80.2707, popup="Chennai") %>%
+  addMarkers(lat=26.9124,lng=75.7873, popup="Jaipur") %>%
+  addMarkers(lat=26.8467,lng=80.9462, popup="Lucknow") %>%
+  addMarkers(lat=30.7333,lng=76.7794, popup="Chandigarh") %>%
+  addMarkers(lat=17,6868,lng=83.2185, popup="Vishakapatnam")%>%
+  addMarkers(lat=23.2599,lng=77.4126, popup="Bhopal")%>%
+  addMarkers(lat=31.1408,lng=77.1734, popup="Shimla")%>%
+  addMarkers(lat=25.5941,lng=85.1376, popup="Patna")%>%
+  addMarkers(lat=30.3165,lng=78.0322, popup="Dehradun")%>%
+  addMarkers(lat=20.2961,lng=85.8245, popup="Bhubneswar")%>%
+  addMarkers(lat=8.5241,lng=75.9366, popup="Thiruvananthapuram")%>%
+  addMarkers(lat=25.5788,lng=91.8933, popup="Shillong")%>%
+  addMarkers(lat=23.3441,lng=85.3096, popup="Ranchi")%>%
+  addMarkers(lat=23.3441,lng=81.6296, popup="Raipur")%>%
+  addMarkers(lat=16.5131,lng=80.5165, popup="Amravati")%>%
+  addMarkers(lat=22.0797,lng=82.1409, popup="Bilaspur")%>%
+  addMarkers(lat=27.3314,lng=88.6138, popup="Gangtok")%>%
+  addMarkers(lat=32.7266,lng=74.8570, popup="Jammu")
+  capital
+```
